@@ -4,6 +4,7 @@
 
 #include "btn.h"
 #include "smartPoint.h"
+#include "maConsole.h"
 
 class ofApp : public ofBaseApp{
 
@@ -28,7 +29,10 @@ class ofApp : public ofBaseApp{
 
     private:
 
+        MaConsole *console; //pointer variable
+
         //The star means it will be created in a reserved part of memory just for it.
+
         Btn *btn1;
         Btn *btn2;
         Btn *btn3;

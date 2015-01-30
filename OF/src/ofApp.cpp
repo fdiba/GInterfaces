@@ -8,9 +8,11 @@ void ofApp::setup(){
 
     int xPos = ofGetWindowWidth()-60;
 
-    btn1 = new Btn(xPos, 20, 40, 40, ofColor(255, 0, 0));
-    btn2 = new Btn(xPos, 70, 40, 40, ofColor(0, 255, 0));
-    btn3 = new Btn(xPos, 120, 40, 40, ofColor(0, 0, 255));
+    console = new MaConsole(20, 40, 100, 20); // actual variable declaration
+
+    btn1 = new Btn(xPos, 20, 40, 40, ofColor(255, 0, 0), 0, console);
+    btn2 = new Btn(xPos, 70, 40, 40, ofColor(0, 255, 0), 1, console);
+    btn3 = new Btn(xPos, 120, 40, 40, ofColor(0, 0, 255), 2, console);
 
 }
 
@@ -47,6 +49,8 @@ void ofApp::draw(){
     btn1->display();
     btn2->display();
     btn3->display();
+
+    console->display();
 
     sp.display();
 
