@@ -1,5 +1,5 @@
-#ifndef BTN_H
-#define BTN_H
+#ifndef btn_h
+#define btn_h
 
 #include "ofMain.h"
 
@@ -20,4 +20,4 @@ class Btn
     private:
 };
 
-#endif // BTN_H
+#endif // btn_h

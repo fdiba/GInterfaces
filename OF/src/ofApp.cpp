@@ -18,7 +18,11 @@ void ofApp::draw(){
 
     ofBackground(255);
 
+    sp.update(mouseX, mouseY);
+
+
     btn.display();
+    sp.display();
 
 }
 

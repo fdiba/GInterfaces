@@ -2,7 +2,8 @@
 
 #include "ofMain.h"
 
-#include "Btn.h"
+#include "btn.h"
+#include "smartPoint.h"
 
 class ofApp : public ofBaseApp{
 
@@ -22,5 +23,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		Btn btn;
+		SmartPoint sp;
 
 };
