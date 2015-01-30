@@ -20,6 +20,9 @@ void ofApp::draw(){
 
     sp.update(mouseX, mouseY);
 
+    if(sp.hitTarget(btn)){
+        cout << "hit " << ofRandom(1) << "\n";
+    }
 
     btn.display();
     sp.display();

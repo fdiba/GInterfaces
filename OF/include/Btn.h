@@ -9,8 +9,9 @@ class Btn
         Btn();
         virtual ~Btn();
 
-        int x;
-        int y;
+        int x, y;
+        int width, height;
+
         ofColor color;
 
         void update();

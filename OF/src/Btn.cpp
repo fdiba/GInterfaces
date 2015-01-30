@@ -3,8 +3,10 @@
 Btn::Btn(){
     //ctor
     color.set(255);
-    x = ofGetWindowWidth()-70;
+
     y = 20;
+    width = height = 50;
+    x = ofGetWindowWidth()-(width+20);
 }
 
 Btn::~Btn(){
@@ -18,10 +20,10 @@ void Btn::display(){
 
     ofSetColor(color);
     ofFill();
-    ofRect(x, y , 50, 50);
+    ofRect(x, y , width, height);
 
     ofSetColor(0);
     ofNoFill();
-    ofRect(x, y , 50, 50);
+    ofRect(x, y , width, height);
 
 }

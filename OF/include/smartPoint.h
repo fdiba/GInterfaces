@@ -2,6 +2,7 @@
 #define SMARTPOINT_H
 
 #include "ofMain.h"
+#include "btn.h"
 
 
 class SmartPoint
@@ -15,6 +16,9 @@ class SmartPoint
         ofColor color;
 
         void update(int _mouseX, int _mouseY);
+
+        bool hitTarget(Btn btn);
+
         void display();
 
     protected:
