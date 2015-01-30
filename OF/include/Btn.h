@@ -6,16 +6,20 @@
 class Btn
 {
     public:
-        Btn();
+        Btn(float x, float y, int width, int height, ofColor color);
         virtual ~Btn();
 
         int x, y;
         int width, height;
 
         ofColor color;
+        int alpha;
 
         void update();
         void display();
+
+        void isHit();
+        void isNotHit();
 
     protected:
     private:

@@ -13,7 +13,7 @@ SmartPoint::~SmartPoint()
     //dtor
 }
 
-bool SmartPoint::hitTarget(Btn btn){
+bool SmartPoint::hitTarget(const Btn& btn){
 
     if(x > btn.x && x < btn.x+btn.width && y > btn.y && y < btn.y+btn.height){
         return true;

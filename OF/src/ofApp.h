@@ -22,7 +22,15 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		Btn btn;
+		//Btn btn;
+
 		SmartPoint sp;
+
+    private:
+
+        //The star means it will be created in a reserved part of memory just for it.
+        Btn *btn1;
+        Btn *btn2;
+        Btn *btn3;
 
 };

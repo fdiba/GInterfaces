@@ -17,7 +17,7 @@ class SmartPoint
 
         void update(int _mouseX, int _mouseY);
 
-        bool hitTarget(Btn btn);
+        bool hitTarget(const Btn& btn);
 
         void display();
 
