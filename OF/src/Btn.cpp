@@ -24,12 +24,10 @@ void Btn::isHit(){
     if(alpha<255){
         alpha+=5;
     } else if(alpha>=255){
-        //cout << "new evt " << id << "\n";
         cs->updateMessage(id);
+        cs->testCombinaison();
         alpha=0;
     }
-
-
 }
 void Btn::isNotHit(){
     if(alpha>0)alpha-=5;

@@ -19,6 +19,7 @@ class MaConsole
 
         void update();
         void updateMessage(int id);
+        void testCombinaison();
         void display();
 
     protected:
