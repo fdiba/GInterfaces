@@ -1,6 +1,9 @@
 #include "maConsole.h"
 
-MaConsole::MaConsole(float _x, float _y, int _width, int _height){
+MaConsole::MaConsole(TextBox* _textBox, float _x, float _y, int _width, int _height){
+
+    textBox = _textBox;
+
     x = _x;
     y = _y;
     color = ofColor(0, 102, 153);
@@ -8,6 +11,9 @@ MaConsole::MaConsole(float _x, float _y, int _width, int _height){
     height = _height;
     message = "";
     myfont.loadFont("arialbd.ttf", 20);
+
+    mySound.loadSound("kick.wav");
+    //mySound.play();
 
 }
 
@@ -17,9 +23,12 @@ MaConsole::~MaConsole(){
 void MaConsole::testCombinaison(){
 
     if(message.compare(0, 3, "123")==0){
-        cout << "COMBINAISON 123" << "\n";
+        //cout << "COMBINAISON 123" << "\n";
+        mySound.play();
+        textBox->update("mySound.play();");
     } else if(message.compare(0, 3, "121")==0){
-        cout << "COMBINAISON 121" << "\n";
+        //cout << "COMBINAISON 121" << "\n";
+        textBox->update("A quick brown fox jumps over the lazy dog.");
     } if(message.compare(0, 3, "321")==0){
         cout << "COMBINAISON 321" << "\n";
     }

@@ -8,11 +8,16 @@ void ofApp::setup(){
 
     int xPos = ofGetWindowWidth()-60;
 
-    console = new MaConsole(20, 40, 100, 20); // actual variable declaration
+    textBox = new TextBox(20, 200);
+
+    console = new MaConsole(textBox, 20, 40, 100, 20); // actual variable declaration
 
     btn1 = new Btn(xPos, 20, 40, 40, ofColor(255, 0, 0), 1, console);
     btn2 = new Btn(xPos, 70, 40, 40, ofColor(0, 255, 0), 2, console);
     btn3 = new Btn(xPos, 120, 40, 40, ofColor(0, 0, 255), 3, console);
+
+
+
 
 }
 
@@ -51,6 +56,7 @@ void ofApp::draw(){
     btn3->display();
 
     console->display();
+    textBox->display();
 
     sp.display();
 

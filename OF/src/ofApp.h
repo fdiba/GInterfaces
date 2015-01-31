@@ -5,6 +5,7 @@
 #include "btn.h"
 #include "smartPoint.h"
 #include "maConsole.h"
+#include "textBox.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,15 +24,14 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		//Btn btn;
-
 		SmartPoint sp;
+
+        TextBox *textBox;
 
     private:
 
         MaConsole *console; //pointer variable
 
-        //The star means it will be created in a reserved part of memory just for it.
 
         Btn *btn1;
         Btn *btn2;

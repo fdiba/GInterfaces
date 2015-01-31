@@ -2,12 +2,17 @@
 #define MACONSOLE_H
 
 #include "ofMain.h"
+#include "textBox.h"
 
 class MaConsole
 {
     public:
-        MaConsole(float x, float y, int width, int height);
+        MaConsole(TextBox* textBox, float x, float y, int width, int height);
         virtual ~MaConsole();
+
+        TextBox *textBox;
+
+        ofSoundPlayer mySound;
 
         ofTrueTypeFont myfont;
         ofColor color;
