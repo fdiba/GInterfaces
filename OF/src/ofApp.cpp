@@ -6,30 +6,23 @@ void ofApp::setup(){
     ofEnableSmoothing();
     ofSetFrameRate(30);
 
+    ofBackground(255);
+    ofSetBackgroundAuto(true);
+
     int xPos = ofGetWindowWidth()-60;
 
-    textBox = new TextBox(20, 200);
+    myCS = new console(20, 200);
 
-    console = new MaConsole(textBox, 20, 40, 100, 20); // actual variable declaration
+    myGI = new gInterface(myCS, 20, 40, 100, 20); // actual variable declaration
 
-    btn1 = new Btn(xPos, 20, 40, 40, ofColor(255, 0, 0), 1, console);
-    btn2 = new Btn(xPos, 70, 40, 40, ofColor(0, 255, 0), 2, console);
-    btn3 = new Btn(xPos, 120, 40, 40, ofColor(0, 0, 255), 3, console);
-
-
-
+    btn1 = new btn(xPos, 20, 40, 40, ofColor(255, 0, 0), 1, myGI);
+    btn2 = new btn(xPos, 70, 40, 40, ofColor(0, 255, 0), 2, myGI);
+    btn3 = new btn(xPos, 120, 40, 40, ofColor(0, 0, 255), 3, myGI);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::draw(){
-
-    ofBackground(255);
 
     sp.update(mouseX, mouseY);
 
@@ -51,12 +44,17 @@ void ofApp::draw(){
         btn3->isNotHit();
     }
 
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+
     btn1->display();
     btn2->display();
     btn3->display();
 
-    console->display();
-    textBox->display();
+    myGI->display();
+    myCS->display();
 
     sp.display();
 

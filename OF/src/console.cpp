@@ -1,24 +1,25 @@
-#include "textBox.h"
+#include "console.h"
 
-TextBox::TextBox(float _x, float _y){
-    //ctor
+console::console(float _x, float _y) {
+
     x = _x;
     y = _y;
 
     color = ofColor(0);
     myfont.loadFont("times.ttf", 20);
     message = "Hello World!";
+
 }
 
-TextBox::~TextBox(){
+console::~console() {
     //dtor
 }
 
-void TextBox::update(string _message){
+void console::update(string _message){
 
     message = _message;
 }
-void TextBox::display(){
+void console::display(){
     ofSetColor(color);
     myfont.drawString(message, x, y);
 }

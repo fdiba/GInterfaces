@@ -1,13 +1,13 @@
-#ifndef TEXTBOX_H
-#define TEXTBOX_H
+#ifndef CONSOLE_H
+#define CONSOLE_H
 
 #include "ofMain.h"
 
-class TextBox
+class console
 {
     public:
-        TextBox(float x, float y);
-        virtual ~TextBox();
+        console(float x, float y);
+        virtual ~console();
 
         string message;
 
@@ -23,4 +23,4 @@ class TextBox
     private:
 };
 
-#endif // TEXTBOX_H
+#endif // CONSOLE_H

@@ -4,8 +4,8 @@
 
 #include "btn.h"
 #include "smartPoint.h"
-#include "maConsole.h"
-#include "textBox.h"
+#include "gInterface.h"
+#include "console.h"
 
 class ofApp : public ofBaseApp{
 
@@ -24,17 +24,16 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		SmartPoint sp;
+		smartPoint sp;
 
-        TextBox *textBox;
+        console * myCS;
 
     private:
 
-        MaConsole *console; //pointer variable
+        gInterface * myGI; //pointer variable
 
-
-        Btn *btn1;
-        Btn *btn2;
-        Btn *btn3;
+        btn * btn1;
+        btn * btn2;
+        btn * btn3;
 
 };

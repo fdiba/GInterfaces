@@ -1,7 +1,6 @@
 #include "btn.h"
 
-Btn::Btn(float _x, float _y, int _width, int _height, ofColor _color, int _id, MaConsole* _cs){
-    //ctor
+btn::btn(float _x, float _y, int _width, int _height, ofColor _color, int _id, gInterface * _gi){
 
     id = _id;
 
@@ -9,7 +8,7 @@ Btn::Btn(float _x, float _y, int _width, int _height, ofColor _color, int _id, M
 
     alpha=0;
 
-    cs = _cs;
+    gi = _gi;
 
     x = _x;
     y = _y;
@@ -17,24 +16,23 @@ Btn::Btn(float _x, float _y, int _width, int _height, ofColor _color, int _id, M
     width = _width;
     height = _height;
 }
-Btn::~Btn(){
+btn::~btn(){
     //dtor
 }
-void Btn::isHit(){
+void btn::isHit(){
     if(alpha<255){
         alpha+=5;
     } else if(alpha>=255){
-        cs->updateMessage(id);
-        cs->testCombinaison();
+        gi->updateMessage(id);
+        gi->testCombinaison();
         alpha=0;
     }
 }
-void Btn::isNotHit(){
+void btn::isNotHit(){
     if(alpha>0)alpha-=5;
     if(alpha<0)alpha=0;
 }
-void Btn::display(){
-
+void btn::display(){
     ofSetColor(color, alpha);
     ofFill();
     ofRect(x, y , width, height);
@@ -42,5 +40,4 @@ void Btn::display(){
     ofSetColor(0);
     ofNoFill();
     ofRect(x, y , width, height);
-
 }

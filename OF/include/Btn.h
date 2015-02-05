@@ -2,20 +2,20 @@
 #define btn_h
 
 #include "ofMain.h"
-#include "maConsole.h"
+#include "gInterface.h"
 
-class Btn
+class btn
 {
     public:
-        Btn(float x, float y, int width, int height, ofColor color, int _id, MaConsole* _cs);
-        virtual ~Btn();
+        btn(float x, float y, int width, int height, ofColor color, int _id, gInterface * _gi);
+        virtual ~btn();
 
         int id;
 
         int x, y;
         int width, height;
 
-        MaConsole *cs;
+        gInterface * gi;
 
         ofColor color;
         int alpha;

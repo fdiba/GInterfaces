@@ -1,16 +1,16 @@
-#ifndef MACONSOLE_H
-#define MACONSOLE_H
+#ifndef GINTERFACE_H
+#define GINTERFACE_H
 
 #include "ofMain.h"
-#include "textBox.h"
+#include "console.h"
 
-class MaConsole
+class gInterface
 {
     public:
-        MaConsole(TextBox* textBox, float x, float y, int width, int height);
-        virtual ~MaConsole();
+        gInterface(console * myCS, float x, float y, int width, int height);
+        virtual ~gInterface();
 
-        TextBox *textBox;
+        console * myCS;
 
         ofSoundPlayer mySound;
 
@@ -31,4 +31,4 @@ class MaConsole
     private:
 };
 
-#endif // MACONSOLE_H
+#endif // GINTERFACE_H

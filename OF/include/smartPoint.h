@@ -5,11 +5,10 @@
 #include "btn.h"
 
 
-class SmartPoint
-{
+class smartPoint {
     public:
-        SmartPoint();
-        virtual ~SmartPoint();
+        smartPoint();
+        virtual ~smartPoint();
 
         int x;
         int y;
@@ -17,7 +16,7 @@ class SmartPoint
 
         void update(int _mouseX, int _mouseY);
 
-        bool hitTarget(Btn btn);
+        bool hitTarget(btn myBtn);
 
         void display();
 
