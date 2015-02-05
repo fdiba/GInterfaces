@@ -12,8 +12,9 @@ gInterface::gInterface(console * _myCS, float _x, float _y, int _width, int _hei
     message = "";
     myfont.loadFont("arialbd.ttf", 20);
 
-    mySound.loadSound("kick.wav");
-    //mySound.play();
+    soundPlayer.loadSound("kick.wav");
+    videoPlayer.loadMovie("test.mov");
+    videoPlayer.setLoopState(OF_LOOP_NONE);
 
 }
 gInterface::~gInterface(){
@@ -23,18 +24,23 @@ void gInterface::testCombinaison(){
 
     if(message.compare(0, 3, "123")==0){
         //cout << "COMBINAISON 123" << "\n";
-        mySound.play();
-        myCS->update("mySound.play();");
+        soundPlayer.play();
+        myCS->update("soundPlayer.play();");
     } else if(message.compare(0, 3, "121")==0){
         //cout << "COMBINAISON 121" << "\n";
         myCS->update("A quick brown fox jumps over the lazy dog.");
     } if(message.compare(0, 3, "321")==0){
-        cout << "COMBINAISON 321" << "\n";
+        //cout << "COMBINAISON 321" << "\n";
+        videoPlayer.play();
+        myCS->update("videoPlayer.play();");
     }
 
     //reinit combinaison
     if(message.length()>=3)message="";
 
+}
+void gInterface::resetMessage(){
+    message="";
 }
 void gInterface::updateMessage(int id){
 
@@ -63,9 +69,23 @@ void gInterface::updateMessage(int id){
 }
 void gInterface::update(){
 
+    videoPlayer.update();
+
+    if(videoPlayer.getIsMovieDone()){
+        videoPlayer.firstFrame();
+        videoPlayer.stop();
+    }
+
 }
 void gInterface::display(){
+
     ofSetColor(color);
     myfont.drawString(message, x, y);
+
+    if(videoPlayer.isPlaying()){
+        ofSetColor(255);
+        videoPlayer.draw(ofGetWidth()-200,ofGetHeight()-160);
+    }
+
 }
 

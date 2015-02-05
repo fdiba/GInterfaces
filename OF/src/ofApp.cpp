@@ -24,6 +24,8 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 
+    myGI->update();
+
     sp.update(mouseX, mouseY);
 
     if(sp.hitTarget(*btn1)){
@@ -82,7 +84,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    myGI->resetMessage();
 }
 
 //--------------------------------------------------------------
