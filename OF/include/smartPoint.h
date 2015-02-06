@@ -10,8 +10,6 @@ class smartPoint {
         smartPoint();
         virtual ~smartPoint();
 
-        int x;
-        int y;
         ofColor color;
 
         void update(int _mouseX, int _mouseY);
@@ -22,6 +20,8 @@ class smartPoint {
 
     protected:
     private:
+
+        ofPoint location;
 };
 
 #endif // SMARTPOINT_H

@@ -7,12 +7,12 @@
 class btn
 {
     public:
-        btn(float x, float y, int width, int height, ofColor color, int _id, gInterface * _gi);
+        btn(ofPoint loc, int width, int height, ofColor color, int _id, gInterface * _gi);
         virtual ~btn();
 
         int id;
 
-        int x, y;
+        ofPoint location;
         int width, height;
 
         gInterface * gi;

@@ -6,12 +6,10 @@
 class console
 {
     public:
-        console(float x, float y);
+        console(ofPoint loc);
         virtual ~console();
 
         string message;
-
-        int x, y;
 
         ofTrueTypeFont myfont;
         ofColor color;
@@ -21,6 +19,8 @@ class console
 
     protected:
     private:
+
+        ofPoint location;
 };
 
 #endif // CONSOLE_H

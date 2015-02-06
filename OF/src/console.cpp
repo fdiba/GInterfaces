@@ -1,9 +1,8 @@
 #include "console.h"
 
-console::console(float _x, float _y) {
+console::console(ofPoint loc) {
 
-    x = _x;
-    y = _y;
+    location = loc;
 
     color = ofColor(0);
     myfont.loadFont("times.ttf", 20);
@@ -21,5 +20,5 @@ void console::update(string _message){
 }
 void console::display(){
     ofSetColor(color);
-    myfont.drawString(message, x, y);
+    myfont.drawString(message, location.x, location.y);
 }

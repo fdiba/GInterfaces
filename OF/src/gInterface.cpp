@@ -1,11 +1,10 @@
 #include "gInterface.h"
 
-gInterface::gInterface(console * _myCS, float _x, float _y, int _width, int _height){
+gInterface::gInterface(console * _myCS, ofPoint loc, int _width, int _height){
 
     myCS = _myCS;
 
-    x = _x;
-    y = _y;
+    location = loc;
     color = ofColor(0, 102, 153);
     width = _width;
     height = _height;
@@ -80,7 +79,7 @@ void gInterface::update(){
 void gInterface::display(){
 
     ofSetColor(color);
-    myfont.drawString(message, x, y);
+    myfont.drawString(message, location.x, location.y);
 
     if(videoPlayer.isPlaying()){
         ofSetColor(255);

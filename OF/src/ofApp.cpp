@@ -4,20 +4,20 @@
 void ofApp::setup(){
 
     ofEnableSmoothing();
-    ofSetFrameRate(30);
+    ofSetFrameRate(30); //0
 
     ofBackground(255);
     ofSetBackgroundAuto(true);
 
     int xPos = ofGetWindowWidth()-60;
 
-    myCS = new console(20, 200);
+    myCS = new console(ofPoint(20, 200));
 
-    myGI = new gInterface(myCS, 20, 40, 100, 20); // actual variable declaration
+    myGI = new gInterface(myCS, ofPoint(20, 40), 100, 20); // actual variable declaration
 
-    btn1 = new btn(xPos, 20, 40, 40, ofColor(255, 0, 0), 1, myGI);
-    btn2 = new btn(xPos, 70, 40, 40, ofColor(0, 255, 0), 2, myGI);
-    btn3 = new btn(xPos, 120, 40, 40, ofColor(0, 0, 255), 3, myGI);
+    btn1 = new btn(ofPoint(xPos, 20), 40, 40, ofColor(255, 0, 0), 1, myGI);
+    btn2 = new btn(ofPoint(xPos, 70), 40, 40, ofColor(0, 255, 0), 2, myGI);
+    btn3 = new btn(ofPoint(xPos, 120), 40, 40, ofColor(0, 0, 255), 3, myGI);
 
 }
 

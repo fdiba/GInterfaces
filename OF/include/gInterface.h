@@ -7,7 +7,7 @@
 class gInterface
 {
     public:
-        gInterface(console * myCS, float x, float y, int width, int height);
+        gInterface(console * myCS, ofPoint loc, int width, int height);
         virtual ~gInterface();
 
         void update();
@@ -24,7 +24,7 @@ class gInterface
 
         console * myCS;
 
-        int x, y;
+        ofPoint location;
         int width, height;
 
         ofTrueTypeFont myfont;

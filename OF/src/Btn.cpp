@@ -1,6 +1,6 @@
 #include "btn.h"
 
-btn::btn(float _x, float _y, int _width, int _height, ofColor _color, int _id, gInterface * _gi){
+btn::btn(ofPoint loc, int _width, int _height, ofColor _color, int _id, gInterface * _gi){
 
     id = _id;
 
@@ -10,8 +10,7 @@ btn::btn(float _x, float _y, int _width, int _height, ofColor _color, int _id, g
 
     gi = _gi;
 
-    x = _x;
-    y = _y;
+    location = loc;
 
     width = _width;
     height = _height;
@@ -35,9 +34,9 @@ void btn::isNotHit(){
 void btn::display(){
     ofSetColor(color, alpha);
     ofFill();
-    ofRect(x, y , width, height);
+    ofRect(location, width, height);
 
     ofSetColor(0);
     ofNoFill();
-    ofRect(x, y , width, height);
+    ofRect(location, width, height);
 }
